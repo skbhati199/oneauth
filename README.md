@@ -143,7 +143,14 @@ Restore
 ```shell
 PGPASSWORD=******* psql -U oneauthadmin -h <dbhost> -p <dbport> -d oneauthdb < oneauthdb.sql
 ```
+PGPASSWORD= z508zt4vyzejre0x psql -U oneauthadmin -h db-postgresql-blr1-do-user-2270826-0.db.ondigitalocean.com -p 25061 -d oneauth < oneauthdb.sql
 
+Drop All Tables (this prints all the drop commands)
+```sqlite-sql
+select 'drop table if exists "' || tablename || '" cascade;' 
+  from pg_tables
+ where schemaname = 'public';
+ ```
 
 -------------------------
 
